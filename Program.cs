@@ -34,23 +34,23 @@ internal class Program
             throw e;
         }
 
-        Console.WriteLine($"embedded count: {map.EmbeddedData.Count}");
-        // Console.WriteLine($"embedded count: {}");
-        // var itemModels = ;
-        uint count = 0;
-        foreach (var node in map.GetEmbeddedItemModelHeaders()) {
-            Console.WriteLine($"got node type: {node.GetType()}");
-            if (node is CGameItemModel im) {
-                Console.WriteLine(im.Ident.ToString());
-                // var imFull = GameBox.ParseNode<CGameItemModel>(new System.IO.MemoryStream(map.EmbeddedData["Items/" + im.Ident.Id.Replace("\\","/")]));
-                // if (imFull is CGameItemModel) {
-                //     Console.WriteLine($"Recovered : {imFull.Ident.ToString()}");
-                // }
-            }
-            count++;
-        //     // im.Save()
-        }
-        Console.WriteLine($"Count: {count}");
+        // Console.WriteLine($"embedded count: {map.EmbeddedData.Count}");
+        // // Console.WriteLine($"embedded count: {}");
+        // // var itemModels = ;
+        // uint count = 0;
+        // foreach (var node in map.GetEmbeddedItemModelHeaders()) {
+        //     Console.WriteLine($"got node type: {node.GetType()}");
+        //     if (node is CGameItemModel im) {
+        //         Console.WriteLine(im.Ident.ToString());
+        //         // var imFull = GameBox.ParseNode<CGameItemModel>(new System.IO.MemoryStream(map.EmbeddedData["Items/" + im.Ident.Id.Replace("\\","/")]));
+        //         // if (imFull is CGameItemModel) {
+        //         //     Console.WriteLine($"Recovered : {imFull.Ident.ToString()}");
+        //         // }
+        //     }
+        //     count++;
+        // //     // im.Save()
+        // }
+        // Console.WriteLine($"Count: {count}");
 
         var keys2 = map.EmbeddedData.Keys;
         Console.WriteLine("Embed Keys: " + string.Join(", ", keys2));
