@@ -26,7 +26,13 @@ internal class Program
         var sz = JsonConvert.SerializeObject(config);
         Console.WriteLine(sz + "\n\n");
 
-        var map = GameBox.ParseNode<CGameCtnChallenge>(config.MapPath);
+        CGameCtnChallenge map;
+        try {
+            map = GameBox.ParseNode<CGameCtnChallenge>(config.MapPath);
+        } catch (Exception e) {
+            Console.WriteLine($"Error: could not parse map:\n{e.ToString()}");
+            throw e;
+        }
 
         Console.WriteLine($"embedded count: {map.EmbeddedData.Count}");
         // Console.WriteLine($"embedded count: {}");
