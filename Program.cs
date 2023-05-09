@@ -56,6 +56,12 @@ internal class Program
             var cwd = Directory.GetCurrentDirectory();
             Console.WriteLine($"cwd: {cwd}");
             var itemPath = itemSpec.Path;
+
+            if (map.EmbeddedData.ContainsKey(itemPath)) {
+                Console.WriteLine($"Skipping item due to already being in the map: {itemPath}");
+                continue;
+            }
+
             CGameItemModel item;
             try {
                 item = GameBox.ParseNode<CGameItemModel>(itemPath);
